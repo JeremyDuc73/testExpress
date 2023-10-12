@@ -9,6 +9,11 @@ async function displayPizzas(req, res){
     res.send(await Pizza.find({}))
 }
 
+async function displayOnePizza(req, res){
+    let {...pizzaOne} = req.params
+    res.send(await Pizza.findOne({...pizzaOne}))
+}
+
 async function deletePizza(req, res){
     let {...pizzaToDelete} = req.params
     await Pizza.findOneAndDelete({...pizzaToDelete})
@@ -22,4 +27,4 @@ async function updatePizza(req, res){
     res.send("MODIFY OK")
 }
 
-module.exports = {createPizza, displayPizzas, deletePizza, updatePizza}
+module.exports = {createPizza, displayPizzas, deletePizza, updatePizza, displayOnePizza}
