@@ -46,7 +46,7 @@ router.get('/', displayPizzas)
 
 router.post('/add', createPizza)
 
-router.delete('/delete', deletePizza)
+router.delete('/delete/:name', deletePizza)
 
 router.put('/modify/:name', updatePizza)
 

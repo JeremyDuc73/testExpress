@@ -10,8 +10,8 @@ async function displayPizzas(req, res){
 }
 
 async function deletePizza(req, res){
-    let {...pizzaParams} = req.body
-    await Pizza.findOneAndDelete({...pizzaParams})
+    let {...pizzaToDelete} = req.params
+    await Pizza.findOneAndDelete({...pizzaToDelete})
     res.send("OK")
 }
 
